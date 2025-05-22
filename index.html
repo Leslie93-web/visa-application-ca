@@ -2,88 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Canada Visa Application</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 600px;
+      padding: 20px;
+      max-width: 800px;
       margin: auto;
-      padding: 30px;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f5f5f5;
     }
-
-    h1, h2 {
-      text-align: center;
-      color: #0077b6;
+    h1, h2, h3 {
+      color: #003366;
     }
-
     form {
-      background: #ffffff;
+      background-color: #ffffff;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0px 0px 10px #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    input, textarea {
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input, select, textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      margin-bottom: 16px;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-
     button {
-      background-color: #0077b6;
+      background-color: #0066cc;
       color: white;
-      padding: 12px 20px;
       border: none;
+      padding: 10px 20px;
+      font-size: 16px;
       border-radius: 4px;
       cursor: pointer;
-      width: 100%;
-      font-size: 16px;
     }
-
     button:hover {
-      background-color: #023e8a;
+      background-color: #004080;
+    }
+    .logo {
+      max-width: 200px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
+  <img src="image/logo.png" alt="Canada Visa Logo" class="logo">
   <h1>Welcome to the Canada Visa Application Site</h1>
 
-  <img src="IMG-20250522-WA0000.jpg" alt="Visa Photo" style="width:300px; display:block; margin:20px auto;">
+  <form method="POST" action="https://formspree.io/f/mvganklq" enctype="multipart/form-data">
+    <h2>Visitor Visa Application Form</h2>
 
-  <h2>Visitor Visa Application Form</h2>
+    <h3>1. Personal Information</h3>
+    <label>Full Name: <input type="text" name="fullname" required></label>
+    <label>Date of Birth: <input type="date" name="dob" required></label>
+    <label>Gender:
+      <select name="gender" required>
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label>Marital Status:
+      <select name="marital_status" required>
+        <option value="">Select</option>
+        <option>Single</option>
+        <option>Married</option>
+        <option>Divorced</option>
+        <option>Widowed</option>
+      </select>
+    </label>
+    <label>Country of Citizenship: <input type="text" name="citizenship" required></label>
+    <label>Country of Residence: <input type="text" name="residence" required></label>
+    <label>Passport Number: <input type="text" name="passport_number" required></label>
+    <label>Passport Expiry Date: <input type="date" name="passport_expiry" required></label>
+    <label>Phone Number: <input type="tel" name="phone" required></label>
+    <label>Email Address: <input type="email" name="email" required></label>
 
-  <form method="POST" action="https://formspree.io/f/mvganklq">
-    <label for="fullname">Full Name:</label><br>
-    <input type="text" id="fullname" name="fullname" required><br><br>
+    <h3>2. Travel Details</h3>
+    <label>Purpose of Visit: <input type="text" name="purpose" required></label>
+    <label>Intended Date of Arrival: <input type="date" name="arrival" required></label>
+    <label>Intended Duration of Stay (in days): <input type="number" name="duration" required></label>
+    <label>Visited Canada Before?
+      <select name="visited_before" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+    <label>Refused Visa or Entry Anywhere?
+      <select name="refused_visa" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+    <label>If Yes, Please Explain: <textarea name="refusal_explanation"></textarea></label>
 
-    <label for="dob">Date of Birth:</label><br>
-    <input type="date" id="dob" name="dob" required><br><br>
+    <h3>3. Employment Information</h3>
+    <label>Occupation: <input type="text" name="occupation" required></label>
+    <label>Employer Name: <input type="text" name="employer" required></label>
+    <label>Employer Address: <input type="text" name="employer_address" required></label>
+    <label>Length of Employment: <input type="text" name="employment_length" required></label>
 
-    <label for="passport">Passport Number:</label><br>
-    <input type="text" id="passport" name="passport" required><br><br>
+    <h3>4. Travel History</h3>
+    <label>Countries Visited (Last 5 Years): <textarea name="travel_history" required></textarea></label>
+    <label>Do You Hold Other Visas?
+      <select name="other_visas" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
 
-    <label for="nationality">Nationality:</label><br>
-    <input type="text" id="nationality" name="nationality" required><br><br>
+    <h3>5. Invitation/Support in Canada</h3>
+    <label>Do You Have Friends/Family in Canada?
+      <select name="has_inviter" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </label>
+    <label>Inviter’s Name: <input type="text" name="inviter_name"></label>
+    <label>Relationship: <input type="text" name="inviter_relationship"></label>
+    <label>Inviter's Address: <input type="text" name="inviter_address"></label>
+    <label>Inviter's Phone/Email: <input type="text" name="inviter_contact"></label>
 
-    <label for="email">Email Address:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <h3>6. Upload Documents</h3>
+    <label>Upload Passport Bio Page: <input type="file" name="passport_upload" accept=".jpg,.jpeg,.png,.pdf" required></label>
+    <label>Upload Visa Photo: <input type="file" name="photo_upload" accept=".jpg,.jpeg,.png" required></label>
+    <label>Upload Additional Documents: <input type="file" name="other_upload" accept=".jpg,.jpeg,.png,.pdf"></label>
 
-    <label for="phone">Phone Number:</label><br>
-    <input type="tel" id="phone" name="phone" required><br><br>
-
-    <label for="travelhistory">Travel History (past 5 years):</label><br>
-    <textarea id="travelhistory" name="travelhistory" rows="3" cols="40"></textarea><br><br>
-
-    <label for="purpose">Purpose of Visit:</label><br>
-    <textarea id="purpose" name="purpose" rows="4" cols="40" required></textarea><br><br>
+    <h3>7. Declaration</h3>
+    <label>
+      <input type="checkbox" name="declaration" required>
+      I declare that the information provided is true and complete to the best of my knowledge.
+    </label>
 
     <button type="submit">Submit Application</button>
   </form>
 </body>
-</html>
+  </html>
