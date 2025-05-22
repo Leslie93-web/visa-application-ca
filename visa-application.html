@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Visitor Visa Application - LDS Innovative Agency</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  header, footer {
+    background-color: #003366;
+    color: white;
+    padding: 15px 20px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  header p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+  }
+  footer {
+    font-size: 14px;
+    text-align: center;
+  }
+  footer a {
+    color: #aaddff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  .container {
+    max-width: 720px;
+    margin: 30px auto 60px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 6px;
+  }
+  form > div {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  textarea {
+    resize: vertical;
+  }
+  .buttons {
+    text-align: right;
+  }
+  button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+  button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  .step-indicator {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>LDS Innovative Agency</h1>
+  <p>Call to Speak With Us: 1 (876) 352-5177</p>
+</header>
+
+<div class="container">
+  <h2>Visitor Visa Application Form</h2>
+  <div class="step-indicator" id="stepIndicator">Step 1 of 6</div>
+  
+  <form id="visaForm">
+
+    <!-- Step 1: Personal Information -->
+    <fieldset class="step">
+      <h3>Personal Information</h3>
+      <label for="lastName">Last Name (as in passport):</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <label for="firstMiddleName">First & Middle Name (as in passport):</label>
+      <input type="text" id="firstMiddleName" name="firstMiddleName" required />
+
+      <label for="maritalStatus">Marital Status:</label>
+      <select id="maritalStatus" name="maritalStatus" required>
+        <option value="">-- Select --</option>
+        <option>Single</option>
+        <option>Married</option>
+        <option>Divorced</option>
+        <option>Widowed</option>
+        <option>Common-law</option>
+      </select>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">-- Select --</option>
+        <option>Female</option>
+        <option>Male</option>
+        <option>Other</option>
+      </select>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label for="placeOfBirth">Place of Birth (as in passport):</label>
+      <input type="text" id="placeOfBirth" name="placeOfBirth" required />
+
+      <label for="livedOutsideJamaica">Have you lived or worked outside Jamaica in the last 5 years for 6+ months?</label>
+      <select id="livedOutsideJamaica" name="livedOutsideJamaica" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="previousMarriage">Were you previously married or in a common-law relationship?</label>
+      <select id="previousMarriage" name="previousMarriage" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </fieldset>
+
+    <!-- Step 2: Passport Information -->
+    <fieldset class="step" style="display:none">
+      <h3>Passport Information</h3>
+
+      <label for="passportNumber">Passport Number:</label>
+      <input type="text" id="passportNumber" name="passportNumber" required />
+
+      <label for="passportCountry">Country that issued passport:</label>
+      <input type="text" id="passportCountry" name="passportCountry" required />
+
+      <label for="passportCity">Parish/City of Passport Issue:</label>
+      <input type="text" id="passportCity" name="passportCity" required />
+
+      <label for="passportIssueDate">Passport Issue Date:</label>
+      <input type="date" id="passportIssueDate" name="passportIssueDate" required />
+
+      <label for="passportExpiryDate">Passport Expiry Date:</label>
+      <input type="date" id="passportExpiryDate" name="passportExpiryDate" required />
+    </fieldset>
+
+    <!-- Step 3: Contact Information -->
+    <fieldset class="step" style="display:none">
+      <h3>Contact Information</h3>
+
+      <label for="homeAddress">Current Home Address:</label>
+      <input type="text" id="homeAddress" name="homeAddress" required />
+
+      <label for="contactCountry">Country:</label>
+      <input type="text" id="contactCountry" name="contactCountry" required />
+
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" id="phoneNumber" name="phoneNumber" required />
+
+      <label for="whatsappNumber">WhatsApp Number:</label>
+      <input type="tel" id="whatsappNumber" name="whatsappNumber" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="confirmEmail">Confirm Email Address:</label>
+      <input type="email" id="confirmEmail" name="confirmEmail" required />
+    </fieldset>
+
+    <!-- Step 4: Travel Information -->
+    <fieldset class="step" style="display:none">
+      <h3>Travel Information</h3>
+
+      <label for="plannedTravelDate">Planned Travel Date to Canada:</label>
+      <input type="date" id="plannedTravelDate" name="plannedTravelDate" required />
+
+      <label for="returnDate">Return Date from Canada:</label>
+      <input type="date" id="returnDate" name="returnDate" required />
+
+      <label for="lengthOfStay">How long will you stay in Canada?</label>
+      <input type="text" id="lengthOfStay" name="lengthOfStay" placeholder="e.g. 2 weeks" required />
+
+      <label for="purposeTravel">Why are you traveling to Canada? Purpose of Travel:</label>
+      <textarea id="purposeTravel" name="purposeTravel" rows="3" required></textarea>
+    </fieldset>
+
+    <!-- Step 5: Education -->
+    <fieldset class="step" style="display:none">
+      <h3>Education</h3>
+
+      <label for="attendedSchool">Have you attended a university, training institute, or college?</label>
+      <select id="attendedSchool" name="attendedSchool" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="schoolName">School Name:</label>
+      <input type="text" id="schoolName" name="schoolName" />
+
+      <label for="courseOfStudy">Course of Study:</label>
+      <input type="text" id="courseOfStudy" name="courseOfStudy" />
+
+      <label for="schoolParish">Parish of School:</label>
+      <input type="text" id="schoolParish" name="schoolParish" />
+
+      <label for="schoolStartDate">Start Date:</label>
+      <input type="date" id="schoolStartDate" name="schoolStartDate" />
+
+      <label for="schoolEndDate">End Date:</label>
+      <input type="date" id="schoolEndDate" name="schoolEndDate" />
+    </fieldset>
+
+    <!-- Step 6: Employment & Additional Questions -->
+    <fieldset class="step" style="display:none">
+      <h3>Employment</h3>
+
+      <label for="currentEmploymentStatus">Current Employment Status:</label>
+      <select id="currentEmploymentStatus" name="currentEmploymentStatus" required>
+        <option value="">-- Select --</option>
+        <option>Employed</option>
+        <option>Self-employed</option>
+        <option>Registered Business Owner</option>
+        <option>Student</option>
+        <option>Retired</option>
+        <option>Unemployed</option>
+      </select>
+
+      <label for="previousEmployment">Previous Employment (last 2 jobs in the past 10 years):</label>
+      <textarea id="previousEmployment" name="previousEmployment" rows="4" placeholder="Please provide details"></textarea>
+
+      <h3>Additional Questions</h3>
+
+      <label for="beenToCanada">Have you ever been to Canada?</label>
+      <select id="beenToCanada" name="beenToCanada" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="doneBiometrics">Have you ever done biometrics?</label>
+      <select id="doneBiometrics" name="doneBiometrics" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="visaRefused">Have you ever been refused a visa for any country?</label>
+      <select id="visaRefused" name="visaRefused" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="medicalExam">Have you had a Canadian medical exam in the last 12 months?</label>
+      <select id="medicalExam" name="medicalExam" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="criminalRecord">Have you ever been arrested, charged or convicted of any criminal offense?</label>
+      <select id="criminalRecord" name="criminalRecord" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="militaryService">Have you ever served in the military?</label>
+      <select id="militaryService" name="militaryService" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <h3>Family Information</h3>
+
+      <label for="motherMaritalStatus">Mother's Marital Status:</label>
+      <input type="text" id="motherMaritalStatus" name="motherMaritalStatus" />
+
+      <label for="motherHomeAddress">Mother's Home Address:</label>
+      <input type="text" id="motherHomeAddress" name="motherHomeAddress" />
+
+      <label for="motherCountryBirth">Mother's Country of Birth:</label>
+      <input type="text" id="motherCountryBirth" name="motherCountryBirth" />
+
+      <label for="motherOccupation">Mother's Occupation:</label>
+      <input type="text" id="motherOccupation" name="motherOccupation" />
+
+      <label for="fatherName">Father's Name:</label>
+      <input type="text" id="fatherName" name="fatherName" />
+
+      <label for="fatherCountryBirth">Father's Country of Birth:</label>
+      <input type="text" id="fatherCountryBirth" name="fatherCountryBirth" />
+
+      <label for="fatherOccupation">Father's Occupation:</label>
+      <input type="text" id="fatherOccupation" name="fatherOccupation" />
+
+      <label for="haveChildren">Do you have children?</label>
+      <select id="haveChildren" name="haveChildren" required>
+        <option value="">-- Select --</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+
+      <label for="childrenDetails">Children's Names, DOBs & Details:</label>
+      <textarea id="childrenDetails" name="childrenDetails" rows="4" placeholder="Please provide details"></textarea>
+    </fieldset>
+
+    <div class="buttons">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)" disabled>Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      <button type="submit" id="submitBtn" style="display:none">Submit Visa Application</button>
+    </div>
+
+  </form>
+</div>
+
+<footer>
+  <p>Share this page with friends and family! Call us at +1 (345) 123-4567 | WhatsApp: +1 (345) 765-4321</p>
+  <p>
+    Follow us on 
+    <a href="https://facebook.com/ldsinnovativeagency" target="_blank">Facebook</a> | 
+    <a href="https://instagram.com/ldsinnovativeagency" target="_blank">Instagram</a> | 
+    <a href="https://twitter.com/ldsinnovativeagency" target="_blank">Twitter</a>
+  </p>
+</footer>
+
+<script>
+  const form = document.getElementById("visaForm");
+  const steps = document.querySelectorAll(".step");
+  const stepIndicator = document.getElementById("stepIndicator");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const submitBtn = document.getElementById("submitBtn");
+  let currentStep = 0;
+
+  function showStep(n) {
+    steps.forEach((step, index) => {
+      step.style.display = index === n ? "block" : "none";
+    });
+    stepIndicator.textContent = `Step ${n + 1} of ${steps.length}`;
+    prevBtn.disabled = n === 0;
+    nextBtn.style.display =
