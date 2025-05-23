@@ -1,230 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Canadian Visitor Visa Application - LDS Innovative Agency</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f7f8;
-    color: #000;
-    margin: 0; padding: 0;
-  }
-  header, footer {
-    background: #004080;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-  }
-  header h1 {
-    margin: 0 0 5px 0;
-    font-weight: 700;
-    font-size: 26px;
-  }
-  header p {
-    margin: 0;
-    font-size: 14px;
-  }
-  .container {
-    max-width: 800px;
-    margin: 25px auto 50px;
-    background: #fff;
-    border-radius: 8px;
-    padding: 30px 40px;
-    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
-  }
-  h2 {
-    font-weight: 600;
-    border-bottom: 2px solid #004080;
-    padding-bottom: 8px;
-    margin-bottom: 25px;
-  }
-  label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-  }
-  input[type=text], input[type=email], input[type=date], select, textarea {
-    width: 100%;
-    padding: 8px 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-    color: #000;
-  }
-  textarea {
-    resize: vertical;
-  }
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  button {
-    background-color: #004080;
-    color: white;
-    border: none;
-    padding: 12px 22px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-  .step {
-    display: none;
-  }
-  .step.active {
-    display: block;
-  }
-  .conditional {
-    margin-left: 18px;
-    padding-left: 15px;
-    border-left: 3px solid #004080;
-    margin-top: -15px;
-    margin-bottom: 25px;
-  }
-  footer p {
-    margin: 4px 0;
-  }
-  footer .share-links a {
-    color: #aad4ff;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 8px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canadian Visa Application - LDS Innovative Agency</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+    }
+    header, footer {
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      background: #f8f8f8;
+    }
+    header h1 {
+      color: #003366;
+      margin: 0;
+    }
+    footer {
+      background: #003366;
+      color: white;
+    }
+    form {
+      background: #fff;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+    input[type="submit"]:hover {
+      background-color: #005599;
+    }
+    .section-title {
+      margin-top: 40px;
+      font-size: 20px;
+      color: #003366;
+    }
+    a {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
 <header>
+  <a href="index.html" style="float: left; margin-top: 10px;">Home</a>
   <h1>LDS Innovative Agency</h1>
-  <p>Call us: +1 876-352-5177 | WhatsApp: +1 876-835-9237</p>
+  <p>Call to speak with us: +1 (876) 352-5177</p>
 </header>
 
-<div class="container">
-  <form id="visaForm" action="https://formspree.io/f/mvganklq" method="POST" novalidate>
+<form action="https://formspree.io/f/mvganklq" method="POST" onsubmit="window.location.href='thank-you.html'; return false;">
+  <div class="section-title">Personal Information</div>
+  <label>Last Name (as in passport):</label>
+  <input type="text" name="last_name" required />
 
-    <!-- Step 1: Personal Information -->
-    <div class="step active" id="step1">
-      <h2>Personal Information</h2>
+  <label>First & Middle Name (as in passport):</label>
+  <input type="text" name="first_middle_name" required />
 
-      <label for="lastName">Last Name (as in passport):</label>
-      <input type="text" id="lastName" name="lastName" required />
+  <label>Marital Status:</label>
+  <select name="marital_status" required>
+    <option value="">-- Select --</option>
+    <option>Single</option>
+    <option>Married</option>
+    <option>Divorced</option>
+    <option>Widowed</option>
+    <option>Common-law</option>
+  </select>
 
-      <label for="firstMiddleName">First & Middle Name (as in passport):</label>
-      <input type="text" id="firstMiddleName" name="firstMiddleName" required />
+  <label>Gender:</label>
+  <select name="gender" required>
+    <option value="">-- Select --</option>
+    <option>Female</option>
+    <option>Male</option>
+    <option>Other</option>
+  </select>
 
-      <label for="maritalStatus">Marital Status:</label>
-      <select id="maritalStatus" name="maritalStatus" required>
-        <option value="">-- Select --</option>
-        <option>Single</option>
-        <option>Married</option>
-        <option>Divorced</option>
-        <option>Widowed</option>
-        <option>Common-law</option>
-      </select>
+  <label>Date of Birth:</label>
+  <input type="date" name="dob" required />
 
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender" required>
-        <option value="">-- Select --</option>
-        <option>Female</option>
-        <option>Male</option>
-        <option>Other</option>
-      </select>
+  <label>Place of Birth (as in passport):</label>
+  <input type="text" name="place_of_birth" required />
 
-      <label for="dob">Date of Birth:</label>
-      <input type="date" id="dob" name="dob" required />
+  <label>Have you lived or worked outside Jamaica in the last 5 years for 6+ months?</label>
+  <select name="worked_abroad_5_years" required>
+    <option value="">-- Select --</option>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
 
-      <label for="placeOfBirth">Place of Birth (as in passport):</label>
-      <input type="text" id="placeOfBirth" name="placeOfBirth" required />
+  <label>Were you previously married or in a common-law relationship?</label>
+  <select name="previous_marriage" required>
+    <option value="">-- Select --</option>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
 
-      <label for="livedOutsideJamaica">In the last 5 years, have you lived or worked outside Jamaica for more than 6 months?</label>
-      <select id="livedOutsideJamaica" name="livedOutsideJamaica" required>
-        <option value="">-- Select --</option>
-        <option>Yes</option>
-        <option>No</option>
-      </select>
+  <div class="section-title">Passport Information</div>
+  <label>Passport Number:</label>
+  <input type="text" name="passport_number" required />
 
-      <label for="previouslyMarried">Were you previously married or in a common-law relationship?</label>
-      <select id="previouslyMarried" name="previouslyMarried" required>
-        <option value="">-- Select --</option>
-        <option>Yes</option>
-        <option>No</option>
-      </select>
+  <label>Country that issued passport:</label>
+  <input type="text" name="passport_country" required />
 
-      <div id="spouseInfo" class="conditional" style="display:none;">
-        <h3>Spouse/Common-law Partner Information</h3>
+  <label>Parish/City of Passport Issue:</label>
+  <input type="text" name="passport_city" required />
 
-        <label for="spouseName">Name of Spouse/Partner:</label>
-        <input type="text" id="spouseName" name="spouseName" />
+  <label>Passport Issue Date:</label>
+  <input type="date" name="passport_issue_date" required />
 
-        <label for="spouseDob">Spouse Date of Birth:</label>
-        <input type="date" id="spouseDob" name="spouseDob" />
+  <label>Passport Expiry Date:</label>
+  <input type="date" name="passport_expiry_date" required />
 
-        <label for="spousePlaceOfBirth">Spouse Place of Birth:</label>
-        <input type="text" id="spousePlaceOfBirth" name="spousePlaceOfBirth" />
-      </div>
+  <div class="section-title">Contact Information</div>
+  <label>Current Home Address:</label>
+  <input type="text" name="home_address" required />
 
-    </div>
+  <label>Country:</label>
+  <input type="text" name="country" required />
 
-    <!-- Step 2: Passport Information -->
-    <div class="step" id="step2">
-      <h2>Passport Information</h2>
+  <label>Phone Number:</label>
+  <input type="tel" name="phone" required />
 
-      <label for="passportNumber">Passport Number:</label>
-      <input type="text" id="passportNumber" name="passportNumber" required />
+  <label>WhatsApp Number:</label>
+  <input type="tel" name="whatsapp" required />
 
-      <label for="passportCountry">Country that issued passport:</label>
-      <input type="text" id="passportCountry" name="passportCountry" required />
+  <label>Email Address:</label>
+  <input type="email" name="email" required />
 
-      <label for="passportCity">Parish/City where passport was issued:</label>
-      <input type="text" id="passportCity" name="passportCity" required />
+  <label>Confirm Email Address:</label>
+  <input type="email" name="confirm_email" required />
 
-      <label for="passportIssueDate">Passport Issue Date:</label>
-      <input type="date" id="passportIssueDate" name="passportIssueDate" required />
+  <div class="section-title">Travel Information</div>
+  <label>Planned Travel Date to Canada:</label>
+  <input type="date" name="travel_date" required />
 
-      <label for="passportExpiryDate">Passport Expiry Date:</label>
-      <input type="date" id="passportExpiryDate" name="passportExpiryDate" required />
-    </div>
+  <label>Return Date from Canada:</label>
+  <input type="date" name="return_date" required />
 
-    <!-- Step 3: Contact Information -->
-    <div class="step" id="step3">
-      <h2>Contact Information</h2>
+  <label>How long will you stay in Canada?</label>
+  <input type="text" name="stay_duration" required />
 
-      <label for="homeAddress">Current Home Address:</label>
-      <input type="text" id="homeAddress" name="homeAddress" required />
+  <label>Why are you traveling to Canada? Purpose of Travel:</label>
+  <input type="text" name="travel_purpose" required />
 
-      <label for="contactCountry">Country:</label>
-      <input type="text" id="contactCountry" name="contactCountry" required />
+  <input type="submit" value="Submit Visa Application" />
+</form>
 
-      <label for="phoneNumber">Phone Number:</label>
-      <input type="text" id="phoneNumber" name="phoneNumber" required />
+<footer>
+  <p>Share this page with friends and family!</p>
+  <p>Phone: +1 (876) 352-5177 | WhatsApp: +1 (876) 835-9237</p>
+  <p>
+    Instagram: @lds_innovative_agency |
+    Facebook: @lds_innovative_agency |
+    TikTok: @lds_innovative_agency
+  </p>
+</footer>
 
-      <label for="whatsappNumber">WhatsApp Number:</label>
-      <input type="text" id="whatsappNumber" name="whatsappNumber" />
-
-      <label for="emailAddress">Email Address:</label>
-      <input type="email" id="emailAddress" name="emailAddress" required />
-
-      <label for="confirmEmail">Confirm Email Address:</label>
-      <input type="email" id="confirmEmail" name="confirmEmail" required />
-    </div>
-
-    <!-- Step 4: Travel Information -->
-    <div class="step" id="step4">
-      <h2>Travel Information</h2>
-
-      <label for="plannedTravelDate">Planned travel date to Canada:</label>
-      <input type="date" id="plannedTravelDate" name="plannedTravelDate" required />
-
-      <label for="returnDate">Return date from Canada:</label>
-      <input type="date" id="returnDate" name="returnDate" required />
-
-      <label for="lengthOfStay">How long will you stay in Canada?</label>
-      <input type="text" id="lengthOfStay" name
+</body>
+  </html>
